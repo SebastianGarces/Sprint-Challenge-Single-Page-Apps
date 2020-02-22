@@ -1,10 +1,30 @@
-import React, { useState } from "react";
+import React from "react";
+import styled from "styled-components";
 
-export default function SearchForm() {
- 
-  return (
-    <section className="search-form">
-     // Add a search form here
-    </section>
-  );
-}
+const Search = ({ search, setSearch }) => {
+	return (
+		<StyledSearch>
+			<input
+				type="text"
+				value={search}
+				placeholder="Search for your favorite character..."
+				onChange={e => setSearch(e.target.value)}
+			/>
+		</StyledSearch>
+	);
+};
+
+const StyledSearch = styled.form`
+	width: 0 auto;
+	input {
+		height: 3rem;
+		background-color: rgba(255, 255, 255, 0.7);
+		border: 1px solid rgba(0, 0, 0, 0.3);
+		font-family: "Roboto", sans-serif;
+		font-size: 1rem;
+		width: 500px;
+		padding: 0 1rem;
+	}
+`;
+
+export default Search;
