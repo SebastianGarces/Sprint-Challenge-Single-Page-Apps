@@ -8,7 +8,7 @@ export default function Header() {
 			<h1 className="ui center">Rick &amp; Morty Fan Page</h1>
 			<nav className="nav-container">
 				<NavLink to="/">Home</NavLink>
-				<NavLink to="/characters">Character</NavLink>
+				<NavLink to="/characters">Characters</NavLink>
 			</nav>
 		</SyledHeader>
 	);
