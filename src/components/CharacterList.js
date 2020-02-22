@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import styled from "styled-components";
 
@@ -10,6 +10,8 @@ export default function CharacterList() {
 	const [search, setSearch] = useState("");
 
 	useEffect(() => {
+		console.log(`I'm making an API call`);
+
 		axios
 			.get("https://rickandmortyapi.com/api/character/")
 			.then(res => setData(res.data))
@@ -21,10 +23,6 @@ export default function CharacterList() {
 			character.name.toLowerCase().indexOf(search.toLowerCase()) !== -1
 		);
 	});
-
-	console.log("filteredCharacter: ", filteredCharacters);
-
-	console.log("data", data?.results);
 
 	if (!data) return <h1>Loading...</h1>;
 
